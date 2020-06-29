@@ -23,7 +23,8 @@ void adjust(vector<int> &arr, int len, int index)
 // 堆排序
 void heapSort(vector<int> &arr, int size)
 {
-	// 构建大根堆（从最后一个非叶子节点向上）
+	// 构建大根堆（从最后一个非叶子节点向上）   在构造有序堆时，我们开始只需要扫描一半的元素（n/2-1 ~ 0）即可，为什么?
+        // 因为(n/2-1)~0的节点才有子节点，如图1，n=8,(n/2-1) = 3  即3 2 1 0这个四个节点才有子节点
 	for (int i = size / 2 - 1; i >= 0; i--)
 	{
 		adjust(arr, size, i);
